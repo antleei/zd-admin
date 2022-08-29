@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg">
+    <title>掌上大学后台练习项目</title>
+    <style>
+        #preload {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #ffffff;
+            z-index: 99999;
+        }
+
+        #preload li {
+            position: absolute;
+            top: 49%;
+            left: 49%;
+            list-style: none;
+        }
+
+        #preloader {
+            position: relative;
+        }
+
+        #preloader:before {
+            background: #ffcc00;
+            animation: preloader-before 1.5s infinite ease-in-out;
+        }
+
+        #preloader:after {
+            background: #ffea99;
+            left: 22px;
+            animation: preloader-after 1.5s infinite ease-in-out;
+        }
+
+        #preloader:before,
+        #preloader:after {
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            background: #ffea99;
+            position: absolute;
+            content: '';
+        }
+
+        @keyframes preloader-before {
+            0% {
+                transform: translateX(0px) rotate(0deg)
+            }
+
+            50% {
+                transform: translateX(50px) scale(1.2) rotate(260deg);
+                background: #ffea99;
+                border-radius: 0px;
+            }
+
+            100% {
+                transform: translateX(0px) rotate(0deg)
+            }
+        }
+
+        @keyframes preloader-after {
+            0% {
+                transform: translateX(0px)
+            }
+
+            50% {
+                transform: translateX(-50px) scale(1.2) rotate(-260deg);
+                background: #ffcc00;
+                border-radius: 0px;
+            }
+
+            100% {
+                transform: translateX(0px)
+            }
+        }
+    </style>
+</head>
+
+<body class="dark:text-white dark:bg-hex-121212">
+    <div id="app">
+        <div id="preload">
+            <li>
+                <div id="preloader"></div>
+            </li>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            const setting = localStorage.getItem('color-schema') || 'auto'
+            if (setting === 'dark' || (prefersDark && setting !== 'light'))
+                document.documentElement.classList.toggle('dark', true)
+        })()
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

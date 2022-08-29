@@ -1,0 +1,30 @@
+@use './iconfont.css';
+@use 'element-plus/theme-chalk/dark/css-vars.css';
+@use 'element-plus/theme-chalk/src/message.scss';
+
+html,
+body,
+#app {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html.dark {
+    background: #121212;
+}
+
+:root {
+    --theme-color: #6667AB;
+    --main-color: #2978FF;
+}
+
+#nprogress .bar {
+    background: var(--theme-color);
+    position: fixed;
+    z-index: 1031;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
