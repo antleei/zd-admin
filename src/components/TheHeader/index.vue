@@ -58,9 +58,11 @@ async function handleCommand(command: string) {
                 <template #dropdown>
                     <ElDropdownMenu>
                         <ElDropdownItem command="switchRoles">
+                            <div i-carbon:switch-layer-2 mr-3 />
                             切换角色
                         </ElDropdownItem>
                         <ElDropdownItem command="logout">
+                            <div i-carbon:logout mr-3 />
                             退出登录
                         </ElDropdownItem>
                     </ElDropdownMenu>

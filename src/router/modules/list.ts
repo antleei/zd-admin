@@ -5,6 +5,7 @@ const listRoutes: AppRouteRecordRaw = {
     name: 'List',
     meta: {
         title: '列表页',
+        icon: 'icon-list',
         requiresAuth: true,
         roles: ['*'],
     },

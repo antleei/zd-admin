@@ -6,6 +6,7 @@ const userRoutes: AppRouteRecordRaw = {
     component: () => import('~/pages/user/index.vue'),
     meta: {
         title: '用户管理',
+        icon: 'icon-user',
         requiresAuth: true,
         roles: ['admin'],
     },

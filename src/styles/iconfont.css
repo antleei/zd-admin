@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 1421697 */
-  src: url('//at.alicdn.com/t/font_1421697_2tcyuubulcv.woff2?t=1654417147353') format('woff2'),
-       url('//at.alicdn.com/t/font_1421697_2tcyuubulcv.woff?t=1654417147353') format('woff'),
-       url('//at.alicdn.com/t/font_1421697_2tcyuubulcv.ttf?t=1654417147353') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_1421697_nvx84pzdsle.woff2?t=1661859559063') format('woff2'),
+       url('//at.alicdn.com/t/c/font_1421697_nvx84pzdsle.woff?t=1661859559063') format('woff'),
+       url('//at.alicdn.com/t/c/font_1421697_nvx84pzdsle.ttf?t=1661859559063') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,26 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "\ea94";
+}
+
+.icon-dashboard:before {
+  content: "\eab4";
+}
+
+.icon-list:before {
+  content: "\e663";
+}
+
+.icon-menu:before {
+  content: "\e652";
+}
+
+.icon-yonghu:before {
+  content: "\e640";
 }
 
 .icon-pifu:before {

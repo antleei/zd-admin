@@ -2,12 +2,14 @@
 const isCollapse = $ref(false)
 const route = useRoute()
 const { menuTree } = $(useMenuTree())
+
+console.log(menuTree)
 </script>
 
 <template>
     <ElMenu
         router
-        class="select-none"
+        class="select-none b-r-0"
         :collapse="isCollapse"
         :default-active="route.path"
     >

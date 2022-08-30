@@ -3,5 +3,5 @@
 </script>
 
 <template>
-    <div>menu1-2-1</div>
+    <div>菜单1-2-1</div>
 </template>

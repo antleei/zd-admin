@@ -5,6 +5,7 @@ const menuRoutes: AppRouteRecordRaw = {
     name: 'Menu',
     meta: {
         title: '多级菜单',
+        icon: 'icon-menu',
         requiresAuth: true,
         roles: ['*'],
     },

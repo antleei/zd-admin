@@ -5,6 +5,7 @@ const dashboardRoutes: AppRouteRecordRaw = {
     name: 'Dashboard',
     meta: {
         title: '仪表盘',
+        icon: 'icon-dashboard',
         requiresAuth: true,
         roles: ['*'],
     },

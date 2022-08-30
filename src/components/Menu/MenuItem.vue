@@ -31,12 +31,17 @@ function resolvePath(routePath: string) {
         :index="resolvePath(menu.path)"
     >
         <template #title>
+            <i
+                text="base" mr-4
+                :class="`iconfont ${menu.meta?.icon}`"
+            />
             <span>{{ menu.meta?.title }}</span>
         </template>
         <MenuItem
             v-for="sub in menu.children"
             :key="sub.path"
             :menu="sub"
+            :is-nest="true"
             :base-path="resolvePath(menu.path)"
         />
     </ElSubMenu>
@@ -46,6 +51,10 @@ function resolvePath(routePath: string) {
         :index="resolvePath(menu.path)"
     >
         <template #title>
+            <i
+                :class="`iconfont ${menu.meta?.icon}`" text="base"
+                mr-4
+            />
             <span>{{ menu.meta?.title }}</span>
         </template>
     </ElMenuItem>
