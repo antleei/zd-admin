@@ -6,6 +6,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import { NOT_FOUND_ROUTE, appRoutes, constantRoutes } from '~/router'
 import createRouteGuard from '~/router/guard'
 
+// 创建layout路由
 const routes = setupLayouts([
     ...constantRoutes,
     ...appRoutes,
@@ -20,6 +21,7 @@ export const router = createRouter({
     },
 })
 
+// 创建路由守卫
 createRouteGuard(router)
 
 export default (app: App) => app.use(router)

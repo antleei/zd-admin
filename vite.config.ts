@@ -66,12 +66,12 @@ export default defineConfig({
 
         // https://github.com/vbenjs/vite-plugin-mock
         viteMockServe({
-            mockPath: './src/mock',
+            mockPath: './mock',
             ignore: /^\_/,
             localEnabled: true,
             prodEnabled: true,
             injectCode: `
-                import { setupProdMockServer } from './mock/_createProductionServer';
+                import { setupProdMockServer } from '../mock/_createProductionServer';
                 setupProdMockServer();
             `,
         }),

@@ -75,6 +75,7 @@ function handleLogin() {
                         type="password"
                         show-password
                         placeholder="请输入密码"
+                        @keydown.enter="handleLogin"
                     />
                 </ElFormItem>
                 <div login-btn @click="handleLogin">

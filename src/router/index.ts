@@ -1,4 +1,4 @@
-import type { RouteRecordNormalized } from 'vue-router'
+import type { RouteRecordNormalized, RouteRecordRaw } from 'vue-router'
 
 const modules = import.meta.glob('./modules/*.ts', {
     import: 'default',
@@ -20,7 +20,7 @@ function formatModules(modules: any, result: RouteRecordNormalized[]) {
     return result
 }
 
-export const constantRoutes = [
+export const constantRoutes: RouteRecordRaw[] = [
     {
         path: '/',
         name: 'Home',
@@ -40,11 +40,12 @@ export const constantRoutes = [
     },
 ]
 
-export const NOT_FOUND_ROUTE = {
+export const NOT_FOUND_ROUTE: RouteRecordRaw = {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('~/pages/[...all].vue'),
     meta: {
+        requiresAuth: false,
         layout: '404',
     },
 }

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 
-const props = defineProps({
-    item: {
+const { menu, basePath } = defineProps({
+    menu: {
         type: Object as PropType<childrenType>,
         required: true,
     },
@@ -33,15 +33,15 @@ interface childrenType {
 </script>
 
 <template>
-    <el-sub-menu v-if="props.item.children && props.item.children.length > 0" :key="props.basePath" :index="props.basePath">
+    <ElSubMenu v-if="menu.children && menu.children.length > 0" :key="basePath" :index="basePath">
         <template #title>
-            <span>{{ props.item.meta?.title }}</span>
+            <span>{{ menu.meta?.title }}</span>
         </template>
-        <menu-item v-for="sub in props.item.children" :key="sub.path" :item="sub" :base-path="props.basePath" />
-    </el-sub-menu>
-    <el-menu-item v-else :key="props.item.path" :index="`${props.basePath}/${props.item.path}`">
+        <menu-item v-for="sub in menu.children" :key="sub.path" :menu="sub" :base-path="basePath" />
+    </ElSubMenu>
+    <ElMenuItem v-else :key="menu.path" :index="`${basePath}/${menu.path}`">
         <template #title>
-            <span>{{ props.item.meta?.title }}</span>
+            <span>{{ menu.meta?.title }}</span>
         </template>
-    </el-menu-item>
+    </ElMenuItem>
 </template>

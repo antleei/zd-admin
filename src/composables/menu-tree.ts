@@ -14,29 +14,29 @@ export function useMenuTree() {
                 return null
 
             const collector: any = _routes.map((element) => {
-                // no access
+                // 过滤掉没有权限的路由
                 if (!permission.accessRouter(element))
                     return null
 
-                // leaf node
+                // 过滤掉没有子路由的路由
                 if (element.meta?.hideChildrenInMenu || !element.children) {
                     element.children = []
                     return element
                 }
 
-                // route filter hideInMenu true
+                // 过滤掉隐藏的路由
                 element.children = element.children.filter(
                     x => x.meta?.hideInMenu !== true,
                 )
 
-                // Associated child node
+                // 递归处理children
                 const subItem = travel(element.children, layer + 1)
 
                 if (subItem.length) {
                     element.children = subItem
                     return element
                 }
-                // the else logic
+
                 if (layer > 1) {
                     element.children = subItem
                     return element

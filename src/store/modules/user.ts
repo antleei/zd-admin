@@ -51,6 +51,7 @@ export const useUserStore = defineStore('user', () => {
     async function logout() {
         await userLogout()
         clearToken()
+        reset()
     }
 
     function reset() {

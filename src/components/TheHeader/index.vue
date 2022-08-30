@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
 import { useUserStore } from '~/store'
+
 const { isFullscreen, toggle } = useFullscreen()
 const userStore = useUserStore()
+const router = useRouter()
 
 async function switchRoles() {
     const res = await userStore.switchRoles()
@@ -17,6 +19,9 @@ async function handleCommand(command: string) {
             break
         case 'logout':
             await userStore.logout()
+            router.push('/login')
+            break
+        default:
             break
     }
 }
