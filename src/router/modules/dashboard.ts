@@ -2,7 +2,7 @@ import type { AppRouteRecordRaw } from '../types'
 
 const dashboardRoutes: AppRouteRecordRaw = {
     path: '/dashboard',
-    name: 'dashboard',
+    name: 'Dashboard',
     meta: {
         title: '仪表盘',
         requiresAuth: true,

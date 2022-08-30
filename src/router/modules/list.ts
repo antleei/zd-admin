@@ -2,7 +2,7 @@ import type { AppRouteRecordRaw } from '../types'
 
 const listRoutes: AppRouteRecordRaw = {
     path: '/list',
-    name: 'list',
+    name: 'List',
     meta: {
         title: '列表页',
         requiresAuth: true,

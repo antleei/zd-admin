@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { UserState } from '~/types'
+import type { UserState } from '~/types/user'
 
 export interface LoginData {
     username: string

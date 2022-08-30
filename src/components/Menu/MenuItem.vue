@@ -1,45 +1,50 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
+import path from 'path'
+import type { RouteMeta } from 'vue-router'
 
-const { menu, basePath } = defineProps({
-    menu: {
-        type: Object as PropType<childrenType>,
-        required: true,
-    },
-    isNest: {
-        type: Boolean,
-        default: false,
-    },
-    basePath: {
-        type: String,
-        default: '',
-    },
-})
+const { menu, basePath = '' } = defineProps<{
+    menu: childrenType
+    isNest?: boolean
+    basePath?: string
+}>()
 
 interface childrenType {
     title: string
     path: string
     children?: childrenType[]
-    meta?: {
-        title?: string
-        icon?: string
-        roles?: string[]
-        requiresAuth: boolean
-        hideInMenu?: boolean
-        hideChildrenInMenu?: boolean
-        ignoreCache?: boolean
-    }
+    meta?: RouteMeta
+}
+
+function resolvePath(routePath: string) {
+    const httpReg = /^http(s?):\/\//
+    if (httpReg.test(routePath) || httpReg.test(basePath))
+        return routePath || basePath
+
+    else
+        return path.resolve(basePath, routePath)
 }
 </script>
 
 <template>
-    <ElSubMenu v-if="menu.children && menu.children.length > 0" :key="basePath" :index="basePath">
+    <ElSubMenu
+        v-if="menu.children && menu.children.length > 0"
+        :index="resolvePath(menu.path)"
+    >
         <template #title>
             <span>{{ menu.meta?.title }}</span>
         </template>
-        <menu-item v-for="sub in menu.children" :key="sub.path" :menu="sub" :base-path="basePath" />
+        <MenuItem
+            v-for="sub in menu.children"
+            :key="sub.path"
+            :menu="sub"
+            :base-path="resolvePath(menu.path)"
+        />
     </ElSubMenu>
-    <ElMenuItem v-else :key="menu.path" :index="`${basePath}/${menu.path}`">
+    <ElMenuItem
+        v-else
+        :key="menu.path"
+        :index="resolvePath(menu.path)"
+    >
         <template #title>
             <span>{{ menu.meta?.title }}</span>
         </template>

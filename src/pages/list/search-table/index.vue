@@ -45,7 +45,7 @@ const tableData: User[] = [
 </script>
 
 <template>
-    <div p-3>
+    <div>
         <div mb-3>
             <el-button>
                 reset date filter

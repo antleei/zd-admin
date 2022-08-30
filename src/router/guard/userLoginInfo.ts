@@ -9,6 +9,7 @@ export default function setupUserLoginInfoGuard(router: Router) {
             if (to.path === '/login')
                 next({ path: '/' })
 
+            // 判断用户信息是否存在
             if (userStore.userInfo.role) {
                 next()
             }

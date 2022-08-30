@@ -1,5 +1,5 @@
 <template>
-    <div m-3>
+    <ElRow>
         <ElButton>普通按钮</ElButton>
         <ElButton type="primary">
             管理员和用户能看到
@@ -16,8 +16,8 @@
         <ElButton type="danger">
             Danger
         </ElButton>
-    </div>
-    <div v-permission="['admin', 'user']" m-3>
+    </ElRow>
+    <div v-permission="['admin', 'user']" my-3>
         <ElCard>
             <template #header>
                 <div flex items-center justify-between>
@@ -29,7 +29,7 @@
             </div>
         </ElCard>
     </div>
-    <div v-permission="['admin']" m-3>
+    <div v-permission="['admin']" my-3>
         <ElCard>
             <template #header>
                 <div flex="~" items-center justify-between>
