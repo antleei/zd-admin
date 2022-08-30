@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// import { ElTable } from 'element-plus'
 import type { TableColumnCtx } from 'element-plus/es/components/table/src/table-column/defaults'
 
 interface User {
@@ -47,16 +46,16 @@ const tableData: User[] = [
 <template>
     <div>
         <div mb-3>
-            <el-button>
+            <ElButton>
                 reset date filter
-            </el-button>
-            <el-button>
+            </ElButton>
+            <ElButton>
                 reset all filters
-            </el-button>
+            </ElButton>
         </div>
 
         <ElTable row-key="date" :data="tableData" class="w-full">
-            <el-table-column
+            <ElTableColumn
                 prop="date"
                 label="Date"
                 sortable
@@ -69,10 +68,10 @@ const tableData: User[] = [
                     { text: '2016-05-04', value: '2016-05-04' },
                 ]"
             />
-            <el-table-column prop="name" label="Name" width="180" />
-            <el-table-column prop="address" label="Address" :formatter="formatter" />
+            <ElTableColumn prop="name" label="Name" width="180" />
+            <ElTableColumn prop="address" label="Address" :formatter="formatter" />
 
-            <el-table-column
+            <ElTableColumn
                 prop="tag"
                 label="Tag"
                 width="100"
@@ -91,7 +90,7 @@ const tableData: User[] = [
                         {{ scope.row.tag }}
                     </el-tag>
                 </template>
-            </el-table-column>
+            </ElTableColumn>
         </ElTable>
     </div>
 </template>
