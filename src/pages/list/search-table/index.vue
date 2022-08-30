@@ -55,7 +55,7 @@ const tableData: User[] = [
             </el-button>
         </div>
 
-        <ElTable row-key="date" :data="tableData" style="width: 100%">
+        <ElTable row-key="date" :data="tableData" class="w-full">
             <el-table-column
                 prop="date"
                 label="Date"
