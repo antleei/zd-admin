@@ -9,6 +9,7 @@ const router = useRouter()
 async function switchRoles() {
     const res = await userStore.switchRoles()
 
+    router.push('/')
     ElMessage.success(`切换角色成功：${res}`)
 }
 
@@ -35,7 +36,7 @@ async function handleCommand(command: string) {
                 Zd Admin
             </div>
         </h1>
-        <div flex="~ gap6" items-center>
+        <div :key="userStore.userInfo.role" flex="~ gap6" items-center>
             <button icon-btn @click="toggleDark()">
                 <div i-carbon-sun dark:i-carbon-moon />
             </button>
@@ -43,7 +44,11 @@ async function handleCommand(command: string) {
                 <i v-if="isFullscreen" class="iconfont icon-a-122-tuichuquanping" />
                 <i v-else class="iconfont icon-quanping" />
             </button>
-            <button icon-btn @click="router.push('/user')">
+            <button
+                v-permission="['admin']"
+                icon-btn
+                @click="router.push('/user')"
+            >
                 <div i-carbon:settings />
             </button>
 
