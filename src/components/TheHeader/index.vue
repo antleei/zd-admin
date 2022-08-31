@@ -36,21 +36,26 @@ async function handleCommand(command: string) {
                 Zd Admin
             </div>
         </h1>
-        <div :key="userStore.userInfo.role" flex="~ gap6" items-center>
-            <button icon-btn @click="toggleDark()">
-                <div i-carbon-sun dark:i-carbon-moon />
-            </button>
-            <button icon-btn @click="toggle">
-                <i v-if="isFullscreen" class="iconfont icon-a-122-tuichuquanping" />
-                <i v-else class="iconfont icon-quanping" />
-            </button>
-            <button
-                v-permission="['admin']"
-                icon-btn
-                @click="router.push('/user')"
+        <div flex="~ gap6" items-center>
+            <div
+                :key="userStore.userInfo.role"
+                flex="~ gap6"
             >
-                <div i-carbon:settings />
-            </button>
+                <button icon-btn @click="toggleDark()">
+                    <div i-carbon-sun dark:i-carbon-moon />
+                </button>
+                <button icon-btn @click="toggle">
+                    <i v-if="isFullscreen" class="iconfont icon-a-122-tuichuquanping" />
+                    <i v-else class="iconfont icon-quanping" />
+                </button>
+                <button
+                    v-permission="['admin']"
+                    icon-btn
+                    @click="router.push('/user')"
+                >
+                    <div i-carbon:settings />
+                </button>
+            </div>
 
             <ElDropdown
                 trigger="click"
