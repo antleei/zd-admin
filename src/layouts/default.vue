@@ -4,10 +4,10 @@
             <TheHeader />
         </ElHeader>
         <ElContainer>
-            <ElAside w-55 h-full main-bg fixed left-0 top-0 pt-15>
-                <Menu />
+            <ElAside app-aside>
+                <TheMenu />
             </ElAside>
-            <ElMain pt-15 pl-55 pr0 bg="gray-100 dark:dark-800">
+            <ElMain app-main>
                 <div m-3>
                     <RouterView />
                 </div>

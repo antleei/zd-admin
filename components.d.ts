@@ -37,10 +37,11 @@ declare module '@vue/runtime-core' {
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Menu: typeof import('./src/components/Menu/index.vue')['default']
-    MenuItem: typeof import('./src/components/Menu/MenuItem.vue')['default']
+    MenuItem: typeof import('./src/components/TheMenu/MenuItem.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheAside: typeof import('./src/components/TheAside/index.vue')['default']
     TheHeader: typeof import('./src/components/TheHeader/index.vue')['default']
+    TheMenu: typeof import('./src/components/TheMenu/index.vue')['default']
   }
 }

@@ -50,11 +50,11 @@ function resolvePath(routePath: string) {
         :key="menu.path"
         :index="resolvePath(menu.path)"
     >
+        <i
+            :class="`iconfont ${menu.meta?.icon}`" text="base"
+            mr-4
+        />
         <template #title>
-            <i
-                :class="`iconfont ${menu.meta?.icon}`" text="base"
-                mr-4
-            />
             <span>{{ menu.meta?.title }}</span>
         </template>
     </ElMenuItem>

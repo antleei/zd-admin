@@ -1,17 +1,16 @@
 <script lang="ts" setup>
-const isCollapse = $ref(false)
 const route = useRoute()
 const { menuTree } = $(useMenuTree())
-
-console.log(menuTree)
+const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 </script>
 
 <template>
     <ElMenu
         router
         class="app-menu select-none b-r-0"
-        :collapse="isCollapse"
+        :collapse="!isLargeScreen"
         :default-active="route.path"
+        :collapse-transition="false"
     >
         <MenuItem
             v-for="routes in menuTree"

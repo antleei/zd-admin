@@ -16,6 +16,8 @@ export default defineConfig({
         ['icon-btn', 'h-8 w-8 text-[0.9em] opacity-75 rounded-50% flex items-center justify-center border-1 border-gray-200 dark:border-gray-700 cursor-pointer transition duration-200 ease-in-out hover:opacity-100 !outline-none'],
         ['login-btn', 'w-full h-14 bg-main color-white rounded-full cursor-pointer select-none flex items-center justify-center mt-13'],
         ['oauth-btn', 'w-9 h-9 color-white cursor-pointer rounded-1/2 flex items-center justify-center'],
+        ['app-aside', 'w-16 lg:w-55 h-full main-bg fixed left-0 top-0 pt-15 transition-width duration-300 ease-in-out'],
+        ['app-main', 'pt-15 pl-16 lg:pl-55 pr0 bg-gray-100 dark:bg-dark-800 transition-padding duration-300 ease-in-out'],
     ],
     theme: {
         colors: {
