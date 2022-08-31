@@ -43,7 +43,7 @@ async function handleCommand(command: string) {
                 <i v-if="isFullscreen" class="iconfont icon-a-122-tuichuquanping" />
                 <i v-else class="iconfont icon-quanping" />
             </button>
-            <button icon-btn>
+            <button icon-btn @click="router.push('/user')">
                 <div i-carbon:settings />
             </button>
 

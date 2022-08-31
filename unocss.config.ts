@@ -4,9 +4,9 @@ import {
     presetIcons,
     presetUno,
     presetWebFonts,
-    // transformerDirectives,
     // transformerVariantGroup,
 } from 'unocss'
+import transformerDirective from '@unocss/transformer-directives'
 
 export default defineConfig({
     shortcuts: [
@@ -50,8 +50,8 @@ export default defineConfig({
           `,
     }],
 
-    // transformers: [
-    //   transformerDirectives(),
-    //   transformerVariantGroup(),
-    // ],
+    transformers: [
+        transformerDirective(),
+        // transformerVariantGroup(),
+    ],
 })
