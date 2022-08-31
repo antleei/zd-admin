@@ -19,7 +19,6 @@ console.log(menuTree)
             :menu="routes"
             :base-path="routes.path"
         />
-        <ElMenuItem />
     </ElMenu>
 </template>
 

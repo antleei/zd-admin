@@ -2,6 +2,8 @@ import type { LocationQueryRaw, Router } from 'vue-router'
 import { useUserStore } from '~/store'
 import { isLogin } from '~/utils/auth'
 
+const whiteList = ['/login']
+
 export default function setupUserLoginInfoGuard(router: Router) {
     router.beforeEach(async (to, from, next) => {
         const userStore = useUserStore()
@@ -31,7 +33,7 @@ export default function setupUserLoginInfoGuard(router: Router) {
             }
         }
         else {
-            if (to.path === '/login') {
+            if (whiteList.includes(to.path)) {
                 next()
                 return
             }
