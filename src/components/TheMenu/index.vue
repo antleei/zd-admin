@@ -24,10 +24,8 @@ const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 <style scoped lang="scss">
 .app-menu {
     --el-menu-hover-bg-color: theme('colors.gray.100');
-    :deep(.is-active) {
-        .el-menu-item.is-active {
-            --at-apply: bg-gray-100 dark:bg-dark-600;
-        }
+    :deep(.el-menu-item.is-active) {
+        --at-apply: bg-gray-100 dark:bg-dark-600;
     }
 }
 
